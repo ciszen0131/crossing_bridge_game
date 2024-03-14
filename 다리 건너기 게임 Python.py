@@ -7,8 +7,8 @@ class Bridge:
         for i in range(length):
             num = random.randrange(0, 2)
             self.brlist.append(num)
-    def build(self, 입력방향, i):
-        if 입력방향 == "U":
+    def build(self, direct, i):
+        if direct == "U":
             self.buildUp(i)
             if self.brlist[i] == 1:
                 print("O", end=" ")
@@ -20,7 +20,7 @@ class Bridge:
             print("]")
             if self.brlist[i] != 1:
                 return [False, True, self.i+1]
-        if 입력방향 == "D":
+        if direct == "D":
             self.buildUp(i)
             print(" ", end=" ")
             print("]")
@@ -102,8 +102,8 @@ attempts = 1
 while retry_status == True:
     while bridge.i < length and bridge_status == True:
         # 이동할 칸 선택
-        입력방향 = input("이동할 칸을 선택해주세요. (위 : U, 아래 : D)\n")
-        if 입력방향 == "U":
+        direct = input("이동할 칸을 선택해주세요. (위 : U, 아래 : D)\n")
+        if direct == "U":
             lasttemp = 1
         else:
             lasttemp = 0
