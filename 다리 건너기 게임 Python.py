@@ -108,7 +108,7 @@ while retry_status == True:
         else:
             lasttemp = 0
         print(bridge.brlist)
-        [bridge_status, retry_status, bridge.i] = bridge.build(입력방향, bridge.i)
+        [bridge_status, retry_status, bridge.i] = bridge.build(direct, bridge.i)
     if bridge.i == length and bridge_status == True:
         game_success = True
         retry_status = False
